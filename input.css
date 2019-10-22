@@ -1,0 +1,52 @@
+body{
+	background-color: rgba(45, 55, 35, 25);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100vw;
+	height: 80vh;
+	align-self: center;
+}
+
+input{
+	padding: 15px;
+	width: 500px;
+	border-radius:35px;
+}
+
+h3{
+	font-size: 80px;
+	text-align: center;
+	color: white;
+	margin-bottom: 25px;
+}
+
+h3 span{
+	margin: -8;
+
+}
+
+#box{
+	background: red;
+	height: 100px;
+	width: 100px;
+	margin: 20px;
+	border-top-right-radius: 100px;
+	align-self: center;
+
+}
+
+legend{
+	text-transform: uppercase;
+}
+
+button{
+	text-shadow: transparent;
+	background-color: rgba(45, 55, 35, 25);
+	cursor: pointer;
+
+}
+
+button :hover{
+	color: red;
+}
