@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+{% for blog in ourblogs %}
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card m-5 border-primary">
+			<img class="img-fluid" src="{{ blog.picture.url }}">
+			<p class="card-text m-2">{{ blog.title }}</p>
+			<p class="card-text mx-2">{{ blog.body|truncatewords:20 }}<a href="{% url 'detail' blog_id=blog.id %}" class="card-link">read more</a></p>
+
+			<div class="row px-4 pb-4">
+				<div class="clo-sm-6">
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">50</a></span><span class="card-text mr-5">Comments</span>
+
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
+					{{ blog.likes }}</a></span><span class="card-text mr-3">Likes</span>
+
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
+					{{ blog.author }}</a></span><span class="card-text mr-3">Author</span>
+
+					<span class="m-3"><a href="" class="text-blue m-1">
+						{{ blog.timestamp }}</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock main_content %}
