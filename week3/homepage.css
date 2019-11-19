@@ -1,0 +1,142 @@
+body{
+	background-color: rgba(100, 100, 100, 100);
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: blue;
+	max-height: 16vh;
+}
+
+.logo {
+	text-transform: lowercase;
+
+	font-size: 20px;
+	letter-spacing: none;
+	text-decoration: none;
+	color: white;
+}
+.nav-links {
+	display: flex;
+	width: 50vw;
+	justify-content: space-around;
+	size: 8px;
+}
+.nav-links a {
+	text-decoration: none;
+	color: white;
+}
+
+.btn {
+	background-color: red;
+	border:50px;
+	width: 200px;
+	text-overflow: none;
+	text-decoration: none;
+	margin-left: 150px;
+	margin-right: -150px;
+	color: white;
+}
+
+.form {
+	margin-left: 100px;
+	margin-right: 100px;
+	background-color:brown;
+	padding:50px;
+	display: block;
+	border-radius: 10px;
+	height: 600px;
+}
+.label {
+	display: block;
+	height: 8vh;
+	margin-left: -8px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 0px;
+	margin-top: -30px;
+	color: white;
+}
+
+.first {
+	display: block;
+	height: 8vh;
+	margin-left: 300px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	width: 400px;
+}
+
+.second {
+	display: block;
+	height: 8vh;
+	margin-left: 300px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	width: 400px;
+
+}
+
+.middle {
+	display: block;
+	height: 8vh;
+	margin-left: 300px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	width: 400px;
+
+}
+
+.DOB {
+	display: block;
+	height: 8vh;
+	margin-left: 300px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	width: 400px;
+
+}
+
+.level{
+	display: block;
+	height: 8vh;
+	margin-left: 300px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	width: 400px;
+
+}
+
+.submit {
+	display: block;
+	height: 8vh;
+	margin-left: 400px;
+	text-align: center;
+	width: 200px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: blue;
+	color: white;
+	
+}
+
+.comment {
+	display: block;
+	height: 16vh;
+	margin-left: 500px;
+	text-align: center;
+	width: 500px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: rgba(100, 100, 100, 100);
+	color: white;
+	
+
+}

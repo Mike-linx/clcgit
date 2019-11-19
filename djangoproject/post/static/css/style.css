@@ -1,0 +1,31 @@
+.navbar {
+    box-shadow: 2px 2px 2px 2px blue;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.nav .btn {
+    box-shadow: 2px 2px 4px -1px #54565b;
+    border-radius: 17px;
+}
+.comment {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.comm {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 10px;
+}
+.card {
+    border-radius: 3%;
+}
+img {
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%
+}
+img:hover {
+    transition: transform 1s ease-in;
+}

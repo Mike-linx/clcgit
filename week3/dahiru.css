@@ -1,0 +1,120 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Poppins, Sans-serif;
+}
+
+body {
+	background: white;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: blue;
+	max-height: 16vh;
+}
+
+.logo {
+	text-transform: lowercase;
+
+	font-size: 20px;
+	letter-spacing: none;
+	text-decoration: none;
+	color: white;
+}
+.nav-links {
+	display: flex;
+	width: 50vw;
+	justify-content: space-around;
+	size: 8px;
+}
+.nav-links a {
+	background-color: red;
+	padding: 5px 30px;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.btn {
+	background-color: red;
+	border:50px;
+	width: 200px;
+	text-overflow: none;
+	text-decoration: none;
+	margin-left: 150px;
+	margin-right: -150px;
+	color: white;
+}
+
+.left {
+	margin-top:8px;
+	margin-left: 16px;
+
+}
+
+.image {
+	width: 700px;
+	height: 400px;
+
+}
+
+.form {
+	margin-left: 800px;
+	margin-right: 100px;
+	background-color:rgba(100, 100, 100, 100);
+	padding:50px;
+	margin-top:-400px;
+	display: block;
+	border-radius: 10px;
+	height: 400px; 
+}
+
+.label {
+	display: block;
+	height: 8vh;
+	margin-left: -8px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 0px;
+	margin-top: -30px;
+	color: white;
+	
+}
+
+.email {
+	display: block;
+	height: 8vh;
+	margin-left: 60px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+}
+
+.pass {
+	display: block;
+	height: 8vh;
+	margin-left: 60px;
+	text-align: center;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	
+}
+
+.login {
+	display: block;
+	height: 8vh;
+	margin-left: 60px;
+	text-align: center;
+	width: 200px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: blue;
+	color: white;
+	
+}
+
+

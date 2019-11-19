@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+{% for post in post %}
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card m-5 border-primary">
+			<img class="img-fluid" src="{{ post.picture.url }}">
+			<p class="card-text m-2">{{ post.title }}</p>
+			<p class="card-text mx-2">{{ post.body|truncatewords:20 }}<a href="{% url 'detail' post_id=post.id %}" class="card-link">read more</a></p>
+
+			<div class="row px-4 pb-4">
+				<div class="clo-sm-6">
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">50</a></span><span class="card-text mr-5">Comments</span>
+
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
+					{{ post.likes }}</a></span><span class="card-text mr-3">Likes</span>
+
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
+					{{ post.author }}</a></span><span class="card-text mr-3">Author</span>
+
+					<span class="m-3"><a href="" class="text-blue m-1">
+						{{ post.timestamp }}</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock main_content %}
