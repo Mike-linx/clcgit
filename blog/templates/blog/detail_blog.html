@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block page_title %}
 	{{ blog.title }}
@@ -14,7 +15,7 @@
 
 			<div class="row px-4 pb-4">
 				<div class="clo-sm-6">
-					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">50</a></span><span class="card-text mr-5">Comments</span>
+					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">{{ comments.count }}</a></span><span class="card-text mr-5">Comments</span>
 
 					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
 					{{ blog.likes }}</a></span><span class="card-text mr-3">Likes</span>
@@ -30,4 +31,42 @@
 		</div>
 	</div>
 </div>
+ <!-- Comment Starts here -->
+<div class="row">
+	<div class="col-sm-12">
+		
+		{% for comment in comments  %}
+		<div class="input-group input-group-sm m-3">
+			<img width="50" src="{% static 'img/1.jpg' %}" class="pixsComment">
+			<div class="bg-white actual-comment p-2 mx-2">
+				<h5 class="text-normal">{{ comment.commenter }}</h5>
+				<span>{{ comment.comment }}</span>
+			</div>
+		</div>
+		<div class="likes my-2">
+			<span>{{ comment.posted }}</span>
+			<span>{{ comment.likes }}<a href="#">Like</a></span>
+			<span>2 <a href="#">Reply</a></span>
+		</div>
+
+		{% endfor %}
+
+
+		<form class="form" action="{% url 'post_comment' %}" method="POST">{% csrf_token %}
+			<div class="input-group input-group-sm m-3 comimg">
+				<img width="50" src="{% static 'img/2.jpg' %}" class="pixsComment">
+			</div>
+			<div class="input-group input-group-sm mb-2">
+				<input placeholder="Name" type="text" name="person" class="form form-control">
+				<input placeholder="Name" hidden type="text" name="post" value="{{blog.id}}" class="form form-control">
+			</div>
+			<div class="input-group input-group-sm mb-2">
+				<textarea name="body" cols="50" rows="5" class="form form-control" placeholder="Comments"></textarea>
+				<button name="submit" class="btn btn-primary"></button>
+			</div>
+			<div></div>
+		</form>
+		</div>
+</div>
+
 {% endblock main_content %}

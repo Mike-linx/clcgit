@@ -12,8 +12,13 @@ class Blog(models.Model):
 		return self.title
 
 class Comment(models.Model):
-	comment = models.CharField(max_length=150)
-	post =	  models.ForeignKey(Blog, on_delete=models.CASCADE)
+	commenter = models.CharField(max_length=20)
+	comment = 	models.CharField(max_length=150)
+	post =	  	models.ForeignKey(Blog, on_delete=models.CASCADE)
+	posted = 	models.DateTimeField(auto_now_add=True)
+	no_likes = 	models.IntegerField(default=0)
+
+
 
 	def __str__(self):
 		return self.comment
