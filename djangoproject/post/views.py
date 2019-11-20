@@ -22,5 +22,3 @@ def detail_post(request, post_id):
 	post = Post.objects.get(id=post_id)
 	context = {"post": post}
 	return render(request, Templates, context)
-
-#this anre
