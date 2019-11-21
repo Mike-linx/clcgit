@@ -34,3 +34,24 @@ def post_comment(request):
 		).save()
 
 	return redirect('homepage')
+
+def like_post(request):
+	from django.http import HttpResponse
+
+	post = request.GET.get('post_id')
+	action = int(request.GET.get('action'))
+
+	blog = Blog.objects.get(id=post)
+
+	l = blog.likes
+
+	if action:
+		blog.likes = l + 1
+	else:
+		blog.likes = l - 1
+
+	blog.save()
+
+	return HttpResponse(blog.likes)
+
+	

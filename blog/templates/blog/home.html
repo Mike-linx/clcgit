@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+{{% extends 'base.html' %}
+{% load static %}
 
 {% block main_content %}
 {% for blog in ourblogs %}
@@ -13,8 +14,11 @@
 				<div class="clo-sm-6">
 					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">50</a></span><span class="card-text mr-5">Comments</span>
 
-					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
-					{{ blog.likes }}</a></span><span class="card-text mr-3">Likes</span>
+					<span class="m-3 comm bg-primary"><a href="#" class="likes-r text-white m-1">
+					{{ blog.likes }}</a></span><span class="card-text mr-3">
+						<button post_id="{{ blog.id }}" class="like">Like</button>
+						<img hidden id="loader" width="100" src="{% static 'img/loader.gif' %}">
+					</span>
 
 					<span class="m-3 comm bg-primary"><a href="#" class="text-white m-1">
 					{{ blog.author }}</a></span><span class="card-text mr-3">Author</span>
@@ -28,4 +32,55 @@
 	</div>
 </div>
 {% endfor %}
-{% endblock main_content %}
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var like = document.querySelectorAll('.like');
+
+		$('.like').on('click', function(){
+			let post = $('.like');
+			post_id = $(post).attr('post_id');
+			post_text = this.innerHTML
+
+			like = 0;
+			
+			if(post_text == 'Like'){
+				like = 1;
+			}
+			
+			//let type = $('')
+			$.ajax({
+				url: "{% url 'like' %}",
+
+				data: {
+					"post_id": post_id,
+					"action": like,
+				},
+
+				beforeSend: function (){
+					$('#loader').removeAttr('hidden');
+				},
+
+				complete: function (){
+					$('.like').text('unlike');
+					// $('.like').removeAttr('disabled');
+					$('#loader').attr('hidden', true);
+					//$('.like').attr('disabled', true);
+				},
+
+				success: function (response){
+					$('.likes-r').text(response);
+				},
+
+				error: function (err){
+					console.log(`error: ${err}`);
+				},
+			})		
+		})
+	});
+		
+</script>
+{% endblock main_content %}}
